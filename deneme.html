@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metin Kopyalama</title>
+    <script>
+        function copyTextAndClose() {
+            const text = "Buraya müşterilerin kopyalamasını istediğiniz metni yazın."; // Kopyalanacak metin
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Metin kopyalandı! Sayfa kapanıyor.");
+                window.close(); // Sayfayı kapatır
+            }).catch(err => {
+                alert("Kopyalama başarısız oldu: " + err);
+            });
+        }
+    </script>
+</head>
+<body onload="copyTextAndClose()">
+    <h1>Metin başarıyla kopyalandı!</h1>
+    <p>Metni yapıştırarak kullanabilirsiniz.</p>
+</body>
+</html>
